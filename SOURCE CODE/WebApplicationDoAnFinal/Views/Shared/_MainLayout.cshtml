@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Litah Shop </title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="~/Assets/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="~/Assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="~/Assets/css/lightbox.css">
+    <!--
+
+    TemplateMo 571 Hexashop
+
+    https://templatemo.com/tm-571-hexashop
+
+    -->
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    @{
+        var headerPartital = Html.Partial("_Header");
+        headerPartital = new MvcHtmlString(headerPartital.ToString());
+    }
+    @headerPartital
+    <!-- ***** Header Area End ***** -->
+
+    @RenderBody()
+    @{ Html.RenderPartial("_Footer");}
+    @RenderSection("scripts", required: false)
+
+    <!-- jQuery -->
+    <script src="~/Assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/Assets/js/popper.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/Assets/js/owl-carousel.js"></script>
+    <script src="~/Assets/js/accordions.js"></script>
+    <script src="~/Assets/js/datepicker.js"></script>
+    <script src="~/Assets/js/scrollreveal.min.js"></script>
+    <script src="~/Assets/js/waypoints.min.js"></script>
+    <script src="~/Assets/js/jquery.counterup.min.js"></script>
+    <script src="~/Assets/js/imgfix.min.js"></script>
+    <script src="~/Assets/js/slick.js"></script>
+    <script src="~/Assets/js/lightbox.js"></script>
+    <script src="~/Assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="~/Assets/js/custom.js"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>
+

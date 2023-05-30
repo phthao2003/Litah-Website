@@ -1,0 +1,51 @@
+﻿<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="@Url.Action("Index",new {id = 1})" >
+                        <img src="~/Assets/images/white-logo.jpg" style="width:110px;height:90px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="scroll-to-section"><a href="#men">Best Seller</a></li>
+                        <li class="scroll-to-section"><a href="#women">Inspiration</a></li>
+                        <li class="scroll-to-section"><a href="#kids">Newest</a></li>
+                        <li class="submenu">
+                            <a href="javascript:;">Pages</a>
+                            <ul>
+                                <li> @Html.ActionLink("About Us", "About", "Shop") </li>
+                                <li> @Html.ActionLink("Product", "Index", "Shop") </li>
+                                <li> @Html.ActionLink("Details", "Details", "Shop") </li>
+                                
+                            </ul>
+                        </li>
+                        @Html.Partial("_LoaiSanPham", WebApplicationDoAnFinal.Models.BUS.LoaiSanPhamBUS.DanhSach())
+
+
+
+                        @*<li class="submenu">
+            <a href="javascript:;">Features</a>
+            <ul>
+                <li><a href="#">Features Page 1</a></li>
+                <li><a href="#">Features Page 2</a></li>
+                <li><a href="#">Features Page 3</a></li>
+                <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+            </ul>
+        </li>
+                        *@
+                        <li class="scroll-to-section"><a @Html.ActionLink("Login", "Contact", "Shop") </a> </li>
+                        <li class="scroll-to-section"><a @Html.ActionLink("Sign up", "DetailsNoID", "Shop")</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

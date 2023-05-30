@@ -1,0 +1,116 @@
+﻿@model ShopOnlineConnection.SANPHAM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style>
+
+
+    button {
+        background-color: black;
+        width: 100%;
+        color: white;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid black;
+        box-sizing: border-box;
+    }
+
+    button:hover {
+        opacity: 0.7;
+    }
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        margin: 10px 5px;
+
+    }
+    .a {
+        text-align: center;
+    }
+    </style>
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Single Product Page</h2>
+                    <span>Step into sophistication and grace </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Product Area Starts ***** -->
+<section class="section" id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="left-images">
+                    <img src="~/Assets/images/@Model.HINHCHINH" alt="">
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4>@Model.TENSP</h4>
+                    <span class="price">@Model.GIA VNĐ</span>
+                    <ul class="stars">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+                    <span>Litah Shop, where fashion meets comfort, offering a wide selection of stylish footwear for every occasion.</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>At our shoes shop, we pride ourselves on delivering exceptional quality products that exceed your expectations.</p>
+                    </div>
+                    <div class="quantity-content">
+                        <div class="left-content">
+                            <h6>No. of Orders</h6>
+                        </div>
+                        <div class="right-content">
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h4>Total: 1200000 VNĐ</h4>
+                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-content" class="a">
+        <br />
+        <div class="a"> <h4>Reviews</h4> </div>
+
+        <form>
+            <div class="container">
+                <label><b>Your review</b> </label>
+                <input type="text" placeholder="" name="username" required>
+                <button type="submit">Submit</button>
+                <h9> No reviews yet</h9>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- ***** Product Area Ends ***** -->
+
+

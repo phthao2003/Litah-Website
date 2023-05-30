@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ShopOnlineConnection.LOAISP>
+<li class="submenu">
+    <a href="javascript:;">Product Type</a>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="@Url.Action("Index","LoaiSanPham",new { id=@item.MALOAI})">@item.TENLOAI</a></li>
+        }
+
+
+    </ul>
+</li>
